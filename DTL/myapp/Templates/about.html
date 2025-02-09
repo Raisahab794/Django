@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} About - My Django Site {% endblock %}
+{% block content %}
+<h2>About Us</h2>
+<p>Welcome to the about page of our Django site. Here you can find more information about our mission and values.</p>
+<p>Our mission is to provide a platform for blood donation and connect donors with those in need.</p>
+<p>We value community, compassion, and the spirit of giving.</p>
+<div class="team">
+    <div class="member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h3>John Doe</h3>
+        <p>Founder & CEO</p>
+    </div>
+    <div class="member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h3>Jane Smith</h3>
+        <p>Chief Operating Officer</p>
+    </div>
+</div>
+<style>
+    .team {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .member {
+        text-align: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .member img {
+        border-radius: 50%;
+    }
+    .member h3 {
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}

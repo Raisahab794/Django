@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Home - My Django Site {% endblock %}
+{% block content %}
+<h2>Welcome to the Home Page</h2>
+<p>This is the home page of my Django site. We are glad to have you here.</p>
+<div class="features">
+    <div class="feature">
+        <i class="fas fa-heartbeat"></i>
+        <h3>Feature 1</h3>
+        <p>Details about feature 1.</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-users"></i>
+        <h3>Feature 2</h3>
+        <p>Details about feature 2.</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Feature 3</h3>
+        <p>Details about feature 3.</p>
+    </div>
+</div>
+<style>
+    .features {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .feature {
+        text-align: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .feature i {
+        font-size: 2em;
+        color: #e74c3c;
+    }
+    .feature h3 {
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}
