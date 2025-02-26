@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Library Books</h1>
+
+    {% if filter_author and filter_year %}
+        <h2>Books by {{ filter_author }} in {{ filter_year }}</h2>
+    {% elif filter_author %}
+        <h2>Books by {{ filter_author }}</h2>
+    {% else %}
+        <h2>All Books</h2>
+    {% endif %}
+
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author }} ({{ book.year }})</li>
+        {% empty %}
+            <li>No books found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Library</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Book Library</h1>
+        <nav>
+            <a href="{% url 'library' %}">Home</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

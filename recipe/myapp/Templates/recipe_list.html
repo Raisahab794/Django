@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Recipe List{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #3a1c1c;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h2 {
+        color: #2d1e1e;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li {
+        background-color: #fff;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: #e9e2e2;
+        font-weight: bold;
+    }
+</style>
+
+<h2>Recipe List</h2>
+<ul>
+    {% for recipe in recipes %}
+    <li>
+        <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a>
+        <img src="{% static 'images/recipe_'|add:recipe.id|stringformat:'s'|add:'.jpg' %}" alt="{{ recipe.name }}" style="max-width: 100px;">
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
